@@ -34,7 +34,7 @@ function init() {
     $("#search").val(localStorage.lastSearch)
   }
   if(!localStorage.numvisits) {
-    navigator.notification.alert("Welcome! You are online", function() {}, "Welcome!");
+    //navigator.notification.alert("Welcome! You are online", function() {}, "Welcome!");
     localStorage.numvisits = 1;
   } else {
     localStorage.numvisits = parseInt(localStorage.numvisits) + 1;
@@ -51,7 +51,7 @@ function toggleCon(e) {
     $("#searchBtn").off("touchstart");
     navigator.notification.alert("Sorry, you are offline.", function() {}, "Offline!");
   } else {
-    navigator.notification.alert("Welcome, you are back online.", function() {}, "Online!");
+    //navigator.notification.alert("Welcome, you are back online.", function() {}, "Online!");
     setupButonHandler();
   }
 }
@@ -107,8 +107,7 @@ function setupButtonHandler() {
 
 <body style="background: #4a3b65;" >
 
-<input type="text" id="search" placeholder="Enter Search Term" style="display:none;"><br/>
-<button id="searchBtn" style="display: none;">Search</button>
+
 
 <!-- <div id="results">
 </div> -->
@@ -121,7 +120,8 @@ function setupButtonHandler() {
 </div>
 
 
-<div id="searchBtn" style="display: none;"></div>
+<input type="text" id="search" placeholder="Enter Search Term" style="display:none;"><br/>
+<button id="searchBtn" style="display: none;">Search</button>
 
                   
                                 
@@ -137,9 +137,9 @@ function setupButtonHandler() {
 </div> -->
 
 
- <div class="holds-the-iframe" style="overflow-y:scroll;height:1300px;">
+ <div class="holds-the-iframe" style="overflow-y:scroll;height:1300px;z-index: 10;">
 
- <iframe src="https://kolabo8.com/baja/log.php" width="120%" height="1300px"style="margin-top:-40px;margin-left:-20px;border:none;">
+ <iframe src="https://kolabo8.com/baja/log.php" width="120%" height="1300px"style="margin-top:-50px;margin-left:-20px;border:none;">
  
 </iframe>
 
