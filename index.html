@@ -83,6 +83,9 @@ function setupButtonHandler() {
     });
   });
 };
+
+
+document.getElementById('theIframe').style.height = document.getElementById('theParent').offsetHeight + 'px';
 </script>
 
 <!--<script src="http://code.jquery.com/jquery-1.10.1.min.js">
@@ -137,9 +140,9 @@ function setupButtonHandler() {
 </div> -->
 
 
- <div class="holds-the-iframe" >
+ <div class="holds-the-iframe" id="theIframe" >
 
- <iframe src="https://kolabo8.com/baja/log.php" scrolling="yes" width="120%" height="1300px"style="margin-top:-50px;margin-left:-20px;border:none;">
+ <iframe src="https://kolabo8.com/baja/log.php"  width="120%" height="1300px"style="margin-top:-50px;margin-left:-20px;border:none;">
  
 </iframe>
 
