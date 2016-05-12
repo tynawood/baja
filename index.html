@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-<html manifest="/cache.manifest">
+<!-- <html lang="en"> -->
+<html manifest="cache.manifest">
 <head>
 
 
@@ -56,38 +56,34 @@
 
 
 
-     <script>
-
-
-     document.addEventListener("deviceready", init, false);
- 
-function init() {
-  document.addEventListener("online", toggleCon, false);
-  document.addEventListener("offline", toggleCon, false);
- 
-  if(navigator.network.connection.type == Connection.NONE) {
-    navigator.notification.alert("Oooops, you are offline.", function() {}, "Offline!");
-  } else {
-    setupButtonHandler();
-  }
- 
-}
- 
-function toggleCon(e) {
-  console.log("Called",e.type);
-  if(e.type == "offline") {
-    $("#searchBtn").off("touchstart").attr("disabled","disabled");
-    navigator.notification.alert("Oooops, you are offline.", function() {}, "Offline!");
-  } else {
-    $("#searchBtn").removeAttr("disabled");
-    navigator.notification.alert("Woot, you are back online.", function() {}, "Online!");
-    setupButtonHandler();
-  }
-}
-   /* $(document).bind("mobileinit", function(){
-    $.mobile.allowCrossDomainPages = true;
-    });*/
- </script>
+      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-x.x.x.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+        document.addEventListener("online", onOnline, false);
+        document.addEventListener("offline", onOffline, false);
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    // Cordova is loaded and it is now safe to make calls Cordova methods
+    //
+    function onDeviceReady() {
+        console.log("onDeviceReady");
+    }
+    // Handle the online event
+    //
+    function onOnline() {
+        console.log("onOnline");
+    }
+    function onOffline() {
+        console.log("onOffline");
+    }
+        
+    </script>
   <!-- <script type="text/javascript" language="javascript">
 
 
@@ -183,7 +179,7 @@ $(window).load(function() {
 
 
 
-<body style="background: #4a3b65;">
+<body style="background: #4a3b65;" onload="onLoad()">
 <div id="header" class="header" style="display:none;width:0;height:0;"> </div>
 <div class="header" style="background: #4a3b65;">
 <!-- <a href="settings.html"><div class="menu"></div></a> -->
