@@ -63,7 +63,7 @@ function init() {
   }
   if(navigator.network.connection.type == Connection.NONE) {
     navigator.notification.alert("Please Connect to working internet connection", function() {}, "Internet Connection Error!");
-    // window.location.href="offline.html";
+     window.location.href="offline.html";
   } else {
     setupButtonHandler();
   }
@@ -73,7 +73,7 @@ function toggleCon(e) {
   if(e.type == "offline") {
     $("#searchBtn").off("touchstart");
     navigator.notification.alert("Please Connect to working internet connection", function() {}, "Internet Connection Error!");
-   ///  window.location.href="offline.html";
+     window.location.href="offline.html";
 
   } else {
     //navigator.notification.alert("Welcome, you are back online.", function() {}, "Online!");
@@ -190,30 +190,6 @@ function setupButtonHandler() {
 <div> 
     <object type="text/html" data="https://kolabo8.com/baja/log.php" width="100%" height="500px" >
     </object></div>
-
-        <p id="p1"></p>
-        <script type="text/javascript">
-
-            // Wait for PhoneGap to load
-
-            document.addEventListener("deviceready", onDeviceReady, false);
-
-            // PhoneGap is ready
-
-            function onDeviceReady() {
-                window.localStorage.setItem("key", "minhbinh");
-                var keyname = window.localStorage.key(i);
-                // keyname is now equal to "key"
-                var value = window.localStorage.getItem("key");
-                // value is now equal to "value"
-                //window.localStorage.removeItem("key");
-                //window.localStorage.clear();
-                // localStorage is now empty
-                $("#p1").text(value);
-            }
-
-
-         </script>
 
 <!-- <script>$("#testLoad").load("https://kolabo8.com/baja/log.php");</script>
 <div id="testLoad" style="width:100%;height:100%"></div> -->
