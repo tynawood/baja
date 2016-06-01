@@ -1,6 +1,6 @@
 <!doctype html>
 <!-- <html lang="en"> -->
-<html manifest="cache.manifest">
+<html manifest="legit.appcache">
 <head>
 
 <style type="text/css">
@@ -63,7 +63,7 @@ function init() {
   }
   if(navigator.network.connection.type == Connection.NONE) {
     navigator.notification.alert("Please Connect to working internet connection", function() {}, "Internet Connection Error!");
-     window.location.href="offline.html";
+     ///window.location.href="offline.html";
   } else {
     setupButtonHandler();
   }
@@ -73,7 +73,7 @@ function toggleCon(e) {
   if(e.type == "offline") {
     $("#searchBtn").off("touchstart");
     navigator.notification.alert("Please Connect to working internet connection", function() {}, "Internet Connection Error!");
-     window.location.href="offline.html";
+     ///window.location.href="offline.html";
 
   } else {
     //navigator.notification.alert("Welcome, you are back online.", function() {}, "Online!");

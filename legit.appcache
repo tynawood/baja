@@ -1,11 +1,13 @@
+
 CACHE MANIFEST
+# 2010-06-18:v2
 
-# Time: Thu May 12 2016 04:06:44 GMT+0000 (UTC)
-
+# Explicitly cached 'master entries'.
 CACHE:
+/favicon.ico
 index.html
 https://kolabo8.com/baja/
-https://kolabo8.com/baja/css/idangerous.swiper.css
+https://kolabo8.com/baja/main.php
 https://kolabo8.com/baja/css/normalize.css
 https://kolabo8.com/baja/css/movies-app.css
 http://fonts.googleapis.com/css?family=Actor
@@ -40,7 +42,13 @@ https://kolabo8.com/baja/css/font/roboto/Roboto-Light.ttf
 https://kolabo8.com/baja/css/font/roboto/Roboto-Bold.ttf
 https://kolabo8.com/baja/css/font/roboto/Roboto-Thin.ttf
 
+# Resources that require the user to be online.
 NETWORK:
 *
-OFFLINE:
-https://kolabo8.com/baja/main.php
+
+# static.html will be served if main.py is inaccessible
+# offline.jpg will be served in place of all images in images/large/
+# offline.html will be served in place of all other .html files
+FALLBACK:
+https://kolabo8.com/baja/main.php /offline.html
+images/large/ images/offline.jpg
