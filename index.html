@@ -91,7 +91,7 @@ function setupButtonHandler() {
     $(this).attr("disabled","disabled");
     $("#results").html("<i>Doing a search for "+search+"</i>");
     //ok, hit the API
-    $.get("https://api.github.com/search/repositories", {"q":search}, function(res,code) {
+    $.get("kolabo8.com/baja/main.php", {"q":search}, function(res,code) {
       if(res.items && res.items.length) {
         var s = "<h2>Results</h2>";
         for(var i=0, len=res.items.length; i<len; i++) {
